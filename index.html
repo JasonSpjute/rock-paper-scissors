@@ -16,21 +16,28 @@
         </div>
       </header>
       <main class="container-fluid text-center">
-          <div class="row mt-5">
+          <div class="row my-5">
               <div class="col">
-                <button type="button" class="btn btn-primary">Rock</button>
+                <button type="button" class="btn btn-primary" onclick="play('rock')">Rock</button>
               </div>
               <div class="col">
-                <button type="button" class="btn btn-warning">Paper</button>
+                <button type="button" class="btn btn-warning" onclick="play('paper')">Paper</button>
               </div>
               <div class="col">
-                <button type="button" class="btn btn-success">Scissors</button>
+                <button type="button" class="btn btn-success" onclick="play('scissors')">Scissors</button>
               </div>
           </div>
+          <div class="row">
+              <div class="col-6">
+                <span id="player-choice"></span>
+              </div>
+              <div class="col-6 id="computer-choice"">
 
-      </main>
+              </div>
+          </div>
+        </main>
       <footer>
-        
+
       </footer>
    
 

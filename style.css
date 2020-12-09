@@ -7,7 +7,3 @@ body {
 main {
     flex-grow 1;
 }
-
-header {
-    min-height: 5vh;
-}
