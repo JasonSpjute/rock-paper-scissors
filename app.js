@@ -15,20 +15,30 @@ const rpc ={
         img: 'https://m.media-amazon.com/images/I/810Tz4tXUyL._AC_SL1500_.jpg'
     }
 }
-
+ 
 
 function play(plyr){
-   let comp = 'rock'
-   let choice = rpc[plyr]
-   document.getElementById("player-choice").innerHTML =
-       `<img src="${choice.img}" alt="animal image">`
-   if (comp == plyr){
-       console.log("tie")
-   } else if (choice.win == comp){
-       console.log("win")
-   } else {
-       console.log("loser")
-   }
-
+    let rpcNames = Object.keys(rpc)
+    let index = Math.floor(Math.random() * rpcNames.length);
+    let comp = rpcNames[index]
+    let choice = rpc[plyr]
+    let compPic = rpc[comp]
+    document.getElementById("player-choice").innerHTML =
+        `<h2>You picked ${choice.name}</h2>
+       <img src="${choice.img}" alt="animal image">`
+    document.getElementById("comp-choice").innerHTML =
+        `<h2>The computer picked ${compPic.name}</h2>
+       <img src="${compPic.img}" alt="animal image">`
+    if (comp == plyr){
+       document.getElementById("results").innerHTML =
+       `<h1>It's a TIE!!!</h1>`
+    } else if (choice.win == comp){
+        document.getElementById("results").innerHTML =
+        `<h1>You WIN!!!</h1>`
+    } else {
+        document.getElementById("results").innerHTML =
+        `<h1>You LOSE!!!</h1>`
+    }
+ 
 }
 
